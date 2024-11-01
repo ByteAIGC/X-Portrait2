@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="X-Portrait 2: Highly Expressive Portrait Animation">
+    <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>X-Portrait 2: Highly Expressive Portrait Animation</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+          dataLayer.push(arguments);
+      }
+
+      gtag('js', new Date());
+
+      gtag('config', 'G-PYVRSFMDRL');
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"></script>
+    <script defer src="scripts.js"></script>
+    <style>
+      p {font-size: 1.2em;}
+    </style>
+  </head>
+
+  <body>
+    <section class="hero-body">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">X-Portrait 2: Highly Expressive Portrait Animation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://xiaochen-zhao.netlify.app/">Xiaochen Zhao</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://hongyixu37.github.io/homepage/">Hongyi Xu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://guoxiansong.github.io/homepage/index.html">Guoxian Song</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=FV0eXhQAAAAJ&hl=en">Xie You</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://zhangchenxu528.github.io/">Chenxu Zhang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://lixiulive.com/">Xiu Li</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://linjieluo.com/">Linjie Luo</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=e4lel8QAAAAJ&hl=zh-CN">Jinli Suo</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://www.liuyebin.com/">Yebin Liu</a><sup>2</sup>,
+            </span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>ByteDance Inc.,</span>
+            <span class="author-block"><sup>2</sup>Tsinghua University</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero teaser">
+      <div class="video-container">
+        <video id='replay-video' autoplay muted loop playsinline width='100%'>
+          <source src='./clip/nemo_teaser.mp4' type='video/mp4'>
+        </video>
+      </div>
+    </section>
+    
+    <!-- <section class="hero teaser">
+         <div class="container is-max-desktop">
+           <div class="hero-body">
+             <video id="teaser" autoplay muted loop playsinline height="100%">
+               <source src="./static/videos/teaser.mp4" type="video/mp4">
+             </video>
+             <h2 class="subtitle has-text-centered">
+               <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
+               free-viewpoint
+               portraits.
+             </h2>
+           </div>
+         </div>
+    </section> -->
+
+    <section class="hero-body">
+      <div class="columns is-centered">
+        <div class="column is-three-quarters">
+          
+          <div class="content has-text-justified">
+            <p>
+              Portrait animation technology provides a ultra-low cost
+              and highly effective way to creating expressive, realistic
+              character animations and video footages: users only need
+              to provide a static portrait image and a driving
+              performance video, and the model can then use these inputs
+              to generate videos by transferring the driving expression
+              to the subject in the portrait. This can drastically
+              reduce the complexity of existing motion capture,
+              character animation and content creation pipeline.
+            </p>
+          </div>
+
+          <h2 class="title is-3">Introducing X-Portrait 2</h2>
+          <div class="content has-text-justified">
+            <p>
+              We introduce X-Portrait 2, which builds upon our previous
+              work X-Portrait and brings the expressiveness of portrait
+              animation to a whole new level. To achieve this, we build
+              a state-of-the-art expression encoder model that
+              implicitly encodes every minuscule expressions from the
+              input by training it on large-scale datasets. This encoder
+              is then combined with powerful generative diffusion models
+              to generate fluid and expressive videos. Our X-Portrait 2
+              model can transfer subtle and minuscule facial expressions
+              from the actors as well as challenging expressions
+              including pouting, tougue-out, cheek-puffing and
+              frowning. High fidelity of emotion preservation can also
+              be achieved in the generated videos.
+            </p>
+          </div>
+
+          <div class="container">
+            <div id="results-carousel" class="carousel results-carousel">
+              <div class="item">
+                <video id='replay-video' controls playsinline width='100%' src='clip/demo_withaudio/blackwoman_part0/comb_realhat2-crop_new_drivenby_20241025-204649_audio.mp4' type='video/mp4'/>
+              </div>
+              <div class="item">
+                <video id='replay-video' controls playsinline width='100%' src='clip/demo_withaudio/blackwoman_part1/comb_realoldwoman3-crop_new_drivenby_part1_2hs-yt-Pmk0_audio.mp4'type='video/mp4'/>
+              </div>
+              <div class="item">
+                <video id='replay-video' controls playsinline width='100%' src='clip/demo_withaudio/complex/comb_pexels-nappy-936090-crop_new_drivenby_20241025-202605_audio.mp4' type='video/mp4'/>
+              </div>
+              <div class="item">
+                <video id='replay-video' controls playsinline width='100%' src='clip/demo_withaudio/girl1/comb_realgirl2-crop_new_drivenby_20241025-202732-part2_audio.mp4' type='video/mp4'/>
+              </div>
+              <div class="item">
+                <video id='replay-video' controls playsinline width='100%' src='clip/demo_withaudio/shanling_part1/comb_realman4-crop_new_drivenby_part1_shining1980_audio.mp4' type='video/mp4'/>
+              </div>
+              <div class="item">
+                <video id='replay-video' controls playsinline width='100%' src='clip/demo_withaudio/shanling_part0/comb_realman3-crop_new_drivenby_movie_1_15fps_audio.mp4' type='video/mp4'/>
+              </div>
+              <div class="item">
+                <video id='replay-video' controls playsinline width='100%' src='clip/demo_withaudio/girlcry/comb_blackgirl_cry_drivenby_part1_LZDir3e680o_audio.mp4' type='video/mp4'/>
+              </div>
+              <div class="item">
+                <video id='replay-video' controls playsinline width='100%' src='clip/demo_woaudio/case0/comb_style3DCartoon1-crop_new_drivenby_6246.mp4' type='video/mp4'/>
+              </div>
+              <div class="item">
+                <video id='replay-video' controls playsinline width='100%' src='clip/demo_woaudio/case1/comb_styleart1-crop_new_drivenby_9291.mp4' type='video/mp4'/>
+              </div>
+              <div class="item">
+                <video id='replay-video' controls playsinline width='100%' src='clip/demo_woaudio/case2/comb_pexels-andrea-piacquadio-774909-crop_new_drivenby_1196.mp4' type='video/mp4'/>
+              </div>
+              <div class="item">
+                <video id='replay-video' controls playsinline width='100%' src='clip/demo_woaudio/case3/comb_stylemid6-crop_new_drivenby_10272.mp4' type='video/mp4'/>
+              </div>
+              <div class="item">
+                <video id='replay-video' controls playsinline width='100%' src='clip/demo_woaudio/case3-1/comb_stylemid6-crop_new_drivenby_15137.mp4' type='video/mp4'/>
+              </div>
+              <div class="item">
+                <video id='replay-video' controls playsinline width='100%' src='clip/demo_woaudio/case4/comb_styleElf1-crop_new_drivenby_drama-molonogue1.mp4' type='video/mp4'/>
+              </div>
+              <div class="item">
+                <video id='replay-video' controls playsinline width='100%' src='clip/demo_woaudio/case5/comb_stylepainting-crop_new_drivenby_pexels_angry_green-crop_new.mp4' type='video/mp4'/>
+              </div>
+              <div class="item">
+                <video id='replay-video' controls playsinline width='100%' src='clip/demo_woaudio/case6/comb_styleWood1-crop_new_drivenby_ytb_extreme-crop_new.mp4' type='video/mp4'/>
+              </div>
+              <div class="item">
+                <video id='replay-video' controls playsinline width='100%' src='clip/demo_woaudio/case7/comb_styleart2-crop_new_drivenby_147+EXP-6-tongue-1.mp4' type='video/mp4'/>
+              </div>
+            </div>
+          </div>
+
+          <br/>
+          <h2 class="title is-3">Appearance and Motion Disentanglement</h2>
+          <div class="content has-text-justified">
+            <p>
+              We ensure strong disentanglement of appearance and
+              motion in training our expression encoder such that
+              the encoder only pay attention to the
+              expression-related information in the driving
+              video. Our model can achieve strong cross-style and
+              cross-domain expression transfer, covering both
+              realistic portraits and cartoon images. This makes our
+              model highly adaptive to a wide range of use cases
+              including real-world storytelling, character
+              animation, virtual agents and visual effects.
+            </p>
+          </div>
+
+          <div class="container is-clipped">
+            <div class="column is-full-width">
+              <div id="slider">
+                <video src="clip/merged_vids/017+EXP-3-cheeks+nose.mp4" autoplay controls muted loop playsinline></video>
+                <video src="clip/merged_vids/030+EXP-4-lips.mp4" autoplay controls muted loop playsinline></video>
+                <video src="clip/merged_vids/3761460-uhd_3840_2160_25fps_crop.mp4" autoplay controls muted loop playsinline></video>
+                <video src="clip/merged_vids/6435788-uhd_2160_3840_24fps_crop_result.mp4" autoplay controls muted loop playsinline></video>
+                <video src="clip/merged_vids/7123827-hd_1080_2048_30fps_crop2_result.mp4" autoplay controls muted loop playsinline></video>
+                <video src="clip/merged_vids/FF_C_2_cropped_result.mp4" autoplay controls muted loop playsinline></video>
+                <video src="clip/merged_vids/FF_C_3_cropped_result.mp4" autoplay controls muted loop playsinline></video>
+                <video src="clip/merged_vids/FF_NR_C_2_cropped_result.mp4" autoplay controls muted loop playsinline></video>
+                <video src="clip/merged_vids/nice_exp-crop_new_result.mp4" autoplay controls muted loop playsinline></video>
+                <video src="clip/merged_vids/pexels_angry_black2-crop_new.mp4" autoplay controls muted loop playsinline></video>
+                <video src="clip/merged_vids/pexels_annoyed_girl2-crop_new.mp4" autoplay controls muted loop playsinline></video>
+                <video src="clip/merged_vids/pexels_laugh_indian-crop_new.mp4" autoplay controls muted loop playsinline></video>
+                <video src="clip/merged_vids/pexels_pouting_girl-crop_new.mp4" autoplay controls muted loop playsinline></video>
+                <video src="clip/merged_vids/pexels_scream_upcam-crop_new.mp4" autoplay controls muted loop playsinlinee></video>
+                <video src="clip/merged_vids/pexels_wristle_black-crop_new.mp4" autoplay controls muted loop playsinline></video>
+                <video src="clip/merged_vids/tongue_em_C_cropped_result.mp4" autoplay controls muted loop playsinline></video>
+              </div>
+            </div>
+          </div>
+
+          <br/>
+          <h2 class="title is-3">Comparison to State-of-the-Art Methods</h2>
+          <div class="content has-text-justified">
+            <p>
+              Comparing to state-of-the-art methods, such
+              as <a href="https://byteaigc.github.io/x-portrait/">X-Portrait</a>
+              and
+              recently-released <a href="https://runwayml.com/research/introducing-act-one">Runyway
+                Act-One</a>, our model can faithfully transfer fast
+              head movements, minuscule expression changes and
+              strong personal emotions. These aspects are crucial
+              for high-quality animated content creation, such as
+              those in the animation and movie productions.
+            </p>
+          </div>
+          
+          <div class="container is-clipped">
+            <div class="column is-full-width">
+              <div id="slider">
+                <video src="clip/comparisons/shining_comp.mp4" autoplay controls muted loop playsinline></video>
+                <video src="clip/comparisons/tao_comp.mp4" autoplay controls muted loop playsinline></video>
+                <video src="clip/comparisons/ytb_extreme_comp.mp4" autoplay controls muted loop playsinline></video>
+                <video src="clip/comparisons/1196_0-300_comp.mp4" autoplay controls muted loop playsinline></video>
+                <video src="clip/comparisons/10272_0-244_comp.mp4" autoplay controls muted loop playsinline></video>
+                
+              </div>
+            </div>
+          </div>
+
+          <br/>
+          <h2 class="title is-3">Acknowledgment & Disclaimer</h2>
+          <div class="content has-text-justified">
+            <p>
+              The video clips used as driving videos on this webpage
+              are sourced from <a href="https://www.pexels.com/">Pexels</a>, <a href="https://tobias-kirschstein.github.io/nersemble/">NeRSemble dataset</a>, 
+              <a href="https://dfew-dataset.github.io/">DFEW dataset</a>, and movie Fences (2016), No Strings Attached (2011), It Ends With Us (2024), 
+              I Need You (2010), Face Off (1997), The Shining (1980) and The Legend of Mi Yue (2015). The static images used as reference are sourced from 
+              <a href="https://www.pexels.com/">Pexels</a>, <a href="https://www.midjourney.com/home">Midjourney</a> and <a href="https://www.deviantart.com">Deviantart</a>.
+              These materials are
+              used solely for research and demonstration purposes
+              under the principles of fair use, and no copyright
+              infringement is intended. If you are a copyright holder
+              and believe that our use of your video materials is
+              inappropriate or violates copyright laws, please <a href="mailto:linjie.luo@bytedance.com">contact
+                us</a>, and we will promptly address the matter. This
+              webpage is based
+              on <a href="https://nerfies.github.io/">nerfies</a>
+              template.
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+
+  </body>
+</html>
